@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nova-bubble {
+    @apply relative max-w-[85%] rounded-2xl px-4 py-3 text-[15px] leading-relaxed shadow-sm transition-all;
+  }
+  
+  .nova-bubble-user {
+    @apply bg-blue-600 text-white rounded-br-sm self-end;
+  }
+  
+  .nova-bubble-ai {
+    @apply bg-white text-gray-800 border border-gray-100 rounded-bl-sm self-start;
+  }
+  
+  .nova-thinking-panel {
+    @apply bg-gray-50 border border-gray-100 rounded-xl p-3 text-sm text-gray-500 mb-3;
+  }
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.nova-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
