@@ -1,9 +1,13 @@
 module.exports = {
   content: [
-    './**/*.md',
-    './.vitepress/**/*.{js,ts,vue}',
+    './index.md',
+    './components/**/*.md',
+    './getting-started/**/*.md',
+    './zh/**/*.md',
+    './demos/**/*.{js,ts,jsx,tsx}',
+    './.vitepress/config.ts',
+    './.vitepress/theme/**/*.{js,ts,vue,css}',
     '../src/**/*.{js,ts,jsx,tsx}',
-    '../dist/**/*.{js,mjs}',
   ],
   theme: {
     extend: {},

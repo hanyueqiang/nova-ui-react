@@ -2,33 +2,9 @@
 
 为 AI 聊天界面高度优化的输入组件。它根据内容自动调整高度，并处理常见的快捷键（`Enter` 发送，`Shift + Enter` 换行）。
 
-## 基础用法
+## 基础示例
 
-```tsx
-import { useState } from 'react';
-import { ChatInput } from 'nova-ui-react';
-
-export default function App() {
-  const [value, setValue] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  return (
-    <ChatInput 
-      value={value}
-      onChange={setValue}
-      onSubmit={(val) => {
-        console.log('用户发送:', val);
-        setValue('');
-        setIsGenerating(true);
-      }}
-      isGenerating={isGenerating}
-      onStop={() => setIsGenerating(false)}
-      onAttach={() => console.log('点击了附件')}
-      placeholder="输入消息..."
-    />
-  );
-}
-```
+<ComponentDemo name="chat-input-basic" />
 
 ## 属性 (Props)
 

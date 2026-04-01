@@ -2,20 +2,9 @@
 
 一个简单的组件，用于模拟文本正在被逐字敲击输出的动画效果，末尾带有一个闪烁的光标。当 `isTyping={true}` 时，该组件被 `MessageBubble` 内部使用。
 
-## 基础用法
+## 基础示例
 
-```tsx
-import { TypingEffect } from 'nova-ui-react';
-
-export default function App() {
-  return (
-    <TypingEffect 
-      content="我正在思考如何回答你的问题..." 
-      speed={30} 
-    />
-  );
-}
-```
+<ComponentDemo name="typing-effect-basic" />
 
 ## 属性 (Props)
 

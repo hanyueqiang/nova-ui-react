@@ -1,8 +1,37 @@
-import { defineConfig } from 'vitepress'
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vitepress';
+
+const reactRuntimeRoot = '../../example/node_modules';
 
 export default defineConfig({
   title: "Nova UI",
   description: "A modern React AI UI component library",
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^react$/,
+          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/index.js`, import.meta.url)),
+        },
+        {
+          find: /^react\/jsx-runtime$/,
+          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/jsx-runtime.js`, import.meta.url)),
+        },
+        {
+          find: /^react\/jsx-dev-runtime$/,
+          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/jsx-dev-runtime.js`, import.meta.url)),
+        },
+        {
+          find: /^react-dom$/,
+          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react-dom/index.js`, import.meta.url)),
+        },
+        {
+          find: /^react-dom\/client$/,
+          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react-dom/client.js`, import.meta.url)),
+        },
+      ],
+    },
+  },
   themeConfig: {
     logo: 'https://api.iconify.design/lucide:sparkles.svg?color=%233b82f6',
     socialLinks: [
@@ -78,4 +107,4 @@ export default defineConfig({
       }
     }
   }
-})
+});

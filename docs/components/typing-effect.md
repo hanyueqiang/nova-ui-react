@@ -4,18 +4,7 @@ A simple component that animates text as if it's being typed, complete with a bl
 
 ## Basic Usage
 
-```tsx
-import { TypingEffect } from 'nova-ui-react';
-
-export default function App() {
-  return (
-    <TypingEffect 
-      content="I am currently thinking about the answer..." 
-      speed={30} 
-    />
-  );
-}
-```
+<ComponentDemo name="typing-effect-basic" />
 
 ## Props
 

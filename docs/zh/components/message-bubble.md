@@ -2,27 +2,9 @@
 
 `MessageBubble` 组件用于在聊天界面中显示单条消息。它支持 Markdown、代码语法高亮以及“思考过程”折叠面板（类似 DeepSeek 或 Claude）。
 
-## 基础用法
+## 基础示例
 
-```tsx
-import { MessageBubble } from 'nova-ui-react';
-
-export default function App() {
-  return (
-    <div>
-      <MessageBubble 
-        role="user" 
-        content="你好！能写一个 Python 脚本吗？" 
-      />
-      
-      <MessageBubble 
-        role="ai" 
-        content="当然！这是一个简单的脚本：\n\n```python\nprint('Hello World')\n```" 
-      />
-    </div>
-  );
-}
-```
+<ComponentDemo name="message-bubble-basic" />
 
 ## 属性 (Props)
 

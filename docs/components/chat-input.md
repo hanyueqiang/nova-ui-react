@@ -4,31 +4,7 @@ A highly optimized input component for AI chat interfaces. It auto-resizes based
 
 ## Basic Usage
 
-```tsx
-import { useState } from 'react';
-import { ChatInput } from 'nova-ui-react';
-
-export default function App() {
-  const [value, setValue] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  return (
-    <ChatInput 
-      value={value}
-      onChange={setValue}
-      onSubmit={(val) => {
-        console.log('User sent:', val);
-        setValue('');
-        setIsGenerating(true);
-      }}
-      isGenerating={isGenerating}
-      onStop={() => setIsGenerating(false)}
-      onAttach={() => console.log('Attachment clicked')}
-      placeholder="Type a message..."
-    />
-  );
-}
-```
+<ComponentDemo name="chat-input-basic" />
 
 ## Props
 
