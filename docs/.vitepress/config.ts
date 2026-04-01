@@ -1,7 +1,24 @@
+import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitepress';
 
-const reactRuntimeRoot = '../../example/node_modules';
+const reactRuntimeRoots = [
+  '../../node_modules',
+  '../../example/node_modules',
+];
+
+function resolveRuntimeEntry(entry: string) {
+  for (const runtimeRoot of reactRuntimeRoots) {
+    const candidate = new URL(`${runtimeRoot}/${entry}`, import.meta.url);
+    const candidatePath = fileURLToPath(candidate);
+
+    if (existsSync(candidatePath)) {
+      return candidatePath;
+    }
+  }
+
+  throw new Error(`Unable to resolve runtime dependency: ${entry}`);
+}
 
 export default defineConfig({
   title: "Nova UI",
@@ -11,23 +28,23 @@ export default defineConfig({
       alias: [
         {
           find: /^react$/,
-          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/index.js`, import.meta.url)),
+          replacement: resolveRuntimeEntry('react/index.js'),
         },
         {
           find: /^react\/jsx-runtime$/,
-          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/jsx-runtime.js`, import.meta.url)),
+          replacement: resolveRuntimeEntry('react/jsx-runtime.js'),
         },
         {
           find: /^react\/jsx-dev-runtime$/,
-          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react/jsx-dev-runtime.js`, import.meta.url)),
+          replacement: resolveRuntimeEntry('react/jsx-dev-runtime.js'),
         },
         {
           find: /^react-dom$/,
-          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react-dom/index.js`, import.meta.url)),
+          replacement: resolveRuntimeEntry('react-dom/index.js'),
         },
         {
           find: /^react-dom\/client$/,
-          replacement: fileURLToPath(new URL(`${reactRuntimeRoot}/react-dom/client.js`, import.meta.url)),
+          replacement: resolveRuntimeEntry('react-dom/client.js'),
         },
       ],
     },
