@@ -5,7 +5,7 @@
 Install Nova UI and its required peer dependencies:
 
 ```bash
-npm install @nova-ui/react
+npm install nova-ui-react
 npm install react-markdown react-syntax-highlighter react-textarea-autosize
 ```
 
@@ -22,7 +22,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     // Add this line:
-    "./node_modules/@nova-ui/react/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/nova-ui-react/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
@@ -36,5 +36,5 @@ export default {
 Import the global CSS in your main entry file (e.g., `main.tsx` or `App.tsx`):
 
 ```tsx
-import '@nova-ui/react/dist/index.css';
+import 'nova-ui-react/dist/index.css';
 ```

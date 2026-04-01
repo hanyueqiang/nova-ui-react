@@ -5,7 +5,7 @@ The `MessageBubble` component is used to display individual messages in a chat i
 ## Basic Usage
 
 ```tsx
-import { MessageBubble } from '@nova-ui/react';
+import { MessageBubble } from 'nova-ui-react';
 
 export default function App() {
   return (

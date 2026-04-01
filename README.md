@@ -1,4 +1,4 @@
-# @nova-ui/react
+# nova-ui-react
 
 English | [中文](./README.zh-CN.md)
 
@@ -18,7 +18,7 @@ Modern, production-ready React components for building AI chat interfaces.
 ## Installation
 
 ```bash
-npm install @nova-ui/react
+npm install nova-ui-react
 ```
 
 Peer dependencies:
@@ -29,8 +29,8 @@ Peer dependencies:
 
 ```tsx
 import { useState } from 'react';
-import { MessageBubble, ChatInput } from '@nova-ui/react';
-import '@nova-ui/react/dist/index.css';
+import { MessageBubble, ChatInput } from 'nova-ui-react';
+import 'nova-ui-react/dist/index.css';
 
 export default function App() {
   const [value, setValue] = useState('');
@@ -70,7 +70,7 @@ If your app tree-shakes styles aggressively, ensure Tailwind scans package outpu
 export default {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@nova-ui/react/dist/**/*.{js,mjs}',
+    './node_modules/nova-ui-react/dist/**/*.{js,mjs}',
   ],
 };
 ```

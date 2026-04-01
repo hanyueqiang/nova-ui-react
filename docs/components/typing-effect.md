@@ -5,7 +5,7 @@ A simple component that animates text as if it's being typed, complete with a bl
 ## Basic Usage
 
 ```tsx
-import { TypingEffect } from '@nova-ui/react';
+import { TypingEffect } from 'nova-ui-react';
 
 export default function App() {
   return (

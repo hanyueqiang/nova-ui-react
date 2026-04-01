@@ -5,7 +5,7 @@
 ## 基础用法
 
 ```tsx
-import { TypingEffect } from '@nova-ui/react';
+import { TypingEffect } from 'nova-ui-react';
 
 export default function App() {
   return (

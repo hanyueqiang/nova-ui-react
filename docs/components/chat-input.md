@@ -6,7 +6,7 @@ A highly optimized input component for AI chat interfaces. It auto-resizes based
 
 ```tsx
 import { useState } from 'react';
-import { ChatInput } from '@nova-ui/react';
+import { ChatInput } from 'nova-ui-react';
 
 export default function App() {
   const [value, setValue] = useState('');

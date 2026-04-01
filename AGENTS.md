@@ -1,7 +1,7 @@
 # Nova UI Repository Guide
 
 ## Overview
-- Package name: `@nova-ui/react`
+- Package name: `nova-ui-react`
 - Stack: React + TypeScript + Tailwind CSS
 - Build tool: `tsup`
 - Docs site: `VitePress` in `docs/`

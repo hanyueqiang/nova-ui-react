@@ -1,4 +1,4 @@
-# @nova-ui/react
+# nova-ui-react
 
 [English](./README.md) | 中文
 
@@ -18,7 +18,7 @@
 ## 安装
 
 ```bash
-npm install @nova-ui/react
+npm install nova-ui-react
 ```
 
 对等依赖：
@@ -29,8 +29,8 @@ npm install @nova-ui/react
 
 ```tsx
 import { useState } from 'react';
-import { MessageBubble, ChatInput } from '@nova-ui/react';
-import '@nova-ui/react/dist/index.css';
+import { MessageBubble, ChatInput } from 'nova-ui-react';
+import 'nova-ui-react/dist/index.css';
 
 export default function App() {
   const [value, setValue] = useState('');
@@ -70,7 +70,7 @@ export default function App() {
 export default {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@nova-ui/react/dist/**/*.{js,mjs}',
+    './node_modules/nova-ui-react/dist/**/*.{js,mjs}',
   ],
 };
 ```

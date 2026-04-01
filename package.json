@@ -1,5 +1,5 @@
 {
-  "name": "@nova-ui/react",
+  "name": "nova-ui-react",
   "version": "1.0.0",
   "description": "A modern, highly customizable AI UI component library for React",
   "main": "dist/index.js",

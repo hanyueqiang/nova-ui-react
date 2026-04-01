@@ -5,7 +5,7 @@
 安装 Nova UI 及其所需的对等依赖（peer dependencies）：
 
 ```bash
-npm install @nova-ui/react
+npm install nova-ui-react
 npm install react-markdown react-syntax-highlighter react-textarea-autosize
 ```
 
@@ -22,7 +22,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     // 添加下面这行:
-    "./node_modules/@nova-ui/react/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/nova-ui-react/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
@@ -36,5 +36,5 @@ export default {
 在你的主入口文件（例如 `main.tsx` 或 `App.tsx`）中引入全局 CSS：
 
 ```tsx
-import '@nova-ui/react/dist/index.css';
+import 'nova-ui-react/dist/index.css';
 ```

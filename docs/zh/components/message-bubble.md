@@ -5,7 +5,7 @@
 ## 基础用法
 
 ```tsx
-import { MessageBubble } from '@nova-ui/react';
+import { MessageBubble } from 'nova-ui-react';
 
 export default function App() {
   return (
