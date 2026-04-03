@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue';
 import { createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { useData } from 'vitepress';
-import { demoRegistry, type DemoName } from '../../../demos/registry';
+import { demoRegistry, type DemoName } from '../../../demos/registry.ts';
 
 const props = defineProps<{
   name: DemoName;
@@ -12,6 +12,7 @@ const props = defineProps<{
 const mountTarget = ref<HTMLDivElement | null>(null);
 const expanded = ref(false);
 const copied = ref(false);
+const error = ref<string | null>(null);
 const { lang, page } = useData();
 
 const demo = computed(() => demoRegistry[props.name]);
@@ -44,16 +45,29 @@ const labels = computed(() =>
 let root: Root | null = null;
 let copyTimer: ReturnType<typeof setTimeout> | null = null;
 
-const renderDemo = () => {
+const renderDemo = async () => {
+  await nextTick();
+
   if (!mountTarget.value || !demo.value) {
+    console.warn('ComponentDemo: mountTarget or demo not available', {
+      hasMountTarget: !!mountTarget.value,
+      hasDemo: !!demo.value,
+      demoName: props.name
+    });
     return;
   }
 
-  if (!root) {
-    root = createRoot(mountTarget.value);
-  }
+  try {
+    if (!root) {
+      root = createRoot(mountTarget.value);
+    }
 
-  root.render(createElement(demo.value.component));
+    root.render(createElement(demo.value.component));
+    error.value = null;
+  } catch (err) {
+    console.error('ComponentDemo: Failed to render', err);
+    error.value = err instanceof Error ? err.message : String(err);
+  }
 };
 
 const handleCopy = async () => {
@@ -81,6 +95,12 @@ watch(demo, () => {
   renderDemo();
 });
 
+watch(mountTarget, (newVal) => {
+  if (newVal) {
+    renderDemo();
+  }
+});
+
 onBeforeUnmount(() => {
   if (copyTimer) {
     clearTimeout(copyTimer);
@@ -95,7 +115,10 @@ onBeforeUnmount(() => {
   <div v-if="demo" class="nova-demo">
     <div class="nova-demo__preview">
       <ClientOnly>
-        <div ref="mountTarget" class="nova-demo__canvas" />
+        <div v-if="error" class="nova-demo__error">
+          {{ error }}
+        </div>
+        <div v-else ref="mountTarget" class="nova-demo__canvas" />
       </ClientOnly>
     </div>
 

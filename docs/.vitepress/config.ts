@@ -46,6 +46,10 @@ export default defineConfig({
           find: /^react-dom\/client$/,
           replacement: resolveRuntimeEntry('react-dom/client.js'),
         },
+        {
+          find: /^nova-ui-react$/,
+          replacement: fileURLToPath(new URL('../../src/index.ts', import.meta.url)),
+        },
       ],
     },
   },

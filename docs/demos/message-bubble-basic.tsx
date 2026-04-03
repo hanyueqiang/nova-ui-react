@@ -1,4 +1,4 @@
-import { MessageBubble } from '../../src/components/MessageBubble';
+import { MessageBubble } from 'nova-ui-react';
 
 const thinkingContent = [
   '1. Review the release notes',

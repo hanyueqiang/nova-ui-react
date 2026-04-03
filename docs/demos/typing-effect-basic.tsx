@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TypingEffect } from '../../src/components/TypingEffect';
+import { TypingEffect } from 'nova-ui-react';
 
 const content = 'Nova UI now supports interactive documentation demos with expandable source code.';
 

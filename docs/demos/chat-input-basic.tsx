@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChatInput } from '../../src/components/ChatInput';
+import { ChatInput } from 'nova-ui-react';
 
 export function ChatInputBasicDemo() {
   const [value, setValue] = useState('');

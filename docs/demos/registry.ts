@@ -2,12 +2,12 @@ import type { ComponentType } from 'react';
 import {
   MessageBubbleBasicDemo,
   messageBubbleBasicCode,
-} from './message-bubble-basic';
-import { ChatInputBasicDemo, chatInputBasicCode } from './chat-input-basic';
+} from './message-bubble-basic.tsx';
+import { ChatInputBasicDemo, chatInputBasicCode } from './chat-input-basic.tsx';
 import {
   TypingEffectBasicDemo,
   typingEffectBasicCode,
-} from './typing-effect-basic';
+} from './typing-effect-basic.tsx';
 
 type DemoDefinition = {
   component: ComponentType;
