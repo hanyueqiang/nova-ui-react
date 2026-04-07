@@ -15,6 +15,20 @@
 - `ChatInput`：输入框自适应高度，Enter 发送、Shift+Enter 换行，支持停止与附件操作
 - `TypingEffect`：打字机流式动画，支持结束回调
 
+## 预览
+
+### MessageBubble
+
+![MessageBubble preview](./assets/MessageBubble.png)
+
+### ChatInput
+
+![ChatInput preview](./assets/ChatInput.gif)
+
+### TypingEffect
+
+![TypingEffect preview](./assets/TypingEffect.gif)
+
 ## 安装
 
 ```bash

@@ -15,6 +15,20 @@ Modern, production-ready React components for building AI chat interfaces.
 - `ChatInput`: auto-resize textarea, Enter to send, Shift+Enter for newline, stop/attach actions
 - `TypingEffect`: streaming-like typing animation with optional completion callback
 
+## Preview
+
+### MessageBubble
+
+![MessageBubble preview](./assets/MessageBubble.png)
+
+### ChatInput
+
+![ChatInput preview](./assets/ChatInput.gif)
+
+### TypingEffect
+
+![TypingEffect preview](./assets/TypingEffect.gif)
+
 ## Installation
 
 ```bash
